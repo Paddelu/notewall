@@ -15,11 +15,16 @@ function newNote(){
     visualNote.setAttribute("id",mynote.name);
     document.getElementById("parentdiv").appendChild(visualNote);
     document.getElementById(mynote.name).innerHTML = mynote.content;
+    document.getElementById(mynote.name).style.backgroundColor= mynote.color;
     console.log(notes[notenumber].name);
     console.log(notes[notenumber].content);
     console.log(notes[notenumber].color);
     console.log("that was note number: "+notenumber);
     notenumber++;
+}
+
+function checkUnique(){
+    
 }
 
 
