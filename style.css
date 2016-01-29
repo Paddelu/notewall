@@ -1,4 +1,4 @@
-#drag-1, #drag-2,#drag-3 {
+.drag{
   width: 25%;
   min-height: 6.5em;
   margin: 10%;
@@ -11,11 +11,6 @@
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
-}
-
-#drag-me::before {
-  content: "#" attr(id);
-  font-weight: bold;
 }
 
 #parentdiv{

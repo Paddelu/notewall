@@ -11,10 +11,10 @@ function newNote(){
     var mynote = new note(prompt("Note name"),prompt("Note content"),prompt("note color"));
     notes.push(mynote);
     var visualNote = document.createElement("div");
-    visualNote.setAttribute("class","draggable");
-    visualNote.setAttribute("id","drag-3");
+    visualNote.setAttribute("class","drag draggable");
+    visualNote.setAttribute("id",mynote.name);
     document.getElementById("parentdiv").appendChild(visualNote);
-    document.getElementById("drag-3").innerHTML = mynote.content;
+    document.getElementById(mynote.name).innerHTML = mynote.content;
     console.log(notes[notenumber].name);
     console.log(notes[notenumber].content);
     console.log(notes[notenumber].color);
