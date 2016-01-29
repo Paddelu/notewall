@@ -1,5 +1,6 @@
 var notes = [];
 var notenumber = 0;
+var names = [];
 
 function note(name,content,color){
     this.name = name;
@@ -8,7 +9,14 @@ function note(name,content,color){
 }
 
 function newNote(){
-    var mynote = new note(prompt("Note name"),prompt("Note content"),prompt("note color"));
+    var notename = prompt("Note name");
+    names.push(notename);
+    while(hasDuplicates(names)){
+        names.pop();
+        notename = prompt("Note name");
+        names.push(notename);
+    }
+    var mynote = new note(notename,prompt("Note content"),prompt("note color"));
     notes.push(mynote);
     var visualNote = document.createElement("div");
     visualNote.setAttribute("class","drag draggable");
@@ -20,19 +28,18 @@ function newNote(){
     h.appendChild(t);
     visualNote.appendChild(h);
     document.getElementById(mynote.name).innerHTML += mynote.content;
-
-    
     document.getElementById(mynote.name).style.backgroundColor= mynote.color;
     document.getElementById(mynote.name).title = mynote.name;
-
     console.log("that was note number: "+notenumber);
     notenumber++;
-}
-
-function checkUnique(){
+    console.log(notes[0].name);
     
 }
 
+function hasDuplicates(array) {
+    console.log((new Set(array)).size !== array.length);
+    return (new Set(array)).size !== array.length;
+}
 
 // target elements with the "draggable" class
 interact('.draggable')
