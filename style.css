@@ -7,7 +7,7 @@
   color: black;
 
   border-radius: 0.75em;
-  padding: 4%;
+  padding: 2%;
 
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
@@ -16,4 +16,12 @@
 #parentdiv{
     height: 100%;
     background-color: burlywood;
-;
+    display:block;
+    overflow:auto;
+}
+
+.clearfix:after {
+content: "";
+display: table;
+clear: both;
+}
