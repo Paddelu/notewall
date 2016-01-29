@@ -11,14 +11,13 @@ function note(name,content,color){
 function newNote(){
     var notename = prompt("Note name");
     names.push(notename);
-    while(hasDuplicates(names) || notename.length > 25){
+    while(hasDuplicates(names) || notename.length > 25 || notename == ""){
         console.log(notename.length);
         names.pop();
         notename = prompt("Note name");
         names.push(notename);
     }
     var mynote = new note(notename,prompt("Note content"),prompt("note color"));
-    notes.push(mynote);
     var visualNote = document.createElement("div");
     visualNote.setAttribute("class","drag draggable");
     visualNote.setAttribute("id",mynote.name);
@@ -31,17 +30,26 @@ function newNote(){
     visualNote.appendChild(h);
     document.getElementById(mynote.name).innerHTML += mynote.content;
     document.getElementById(mynote.name).style.backgroundColor= mynote.color;
-    document.getElementById(mynote.name).title = mynote.name;
-    console.log("that was note number: "+notenumber);
-    notenumber++;
-    console.log(notes[0].name);
-    
+    document.getElementById(mynote.name).title = mynote.name;  
 }
 
 function hasDuplicates(array) {
     console.log((new Set(array)).size !== array.length);
     return (new Set(array)).size !== array.length;
 }
+
+interact('.drag.draggable')
+  .on('tap', function (event) {
+    console.log(event.currentTarget.id);
+  });
+
+interact('.drag.draggable')
+  .on('doubletap', function (event) {
+    console.log(event.currentTarget.id);
+    names.splice(names.indexOf(event.currentTarget.id), 1);
+    event.currentTarget.remove();
+    event.preventDefault
+  });
 
 // target elements with the "draggable" class
 interact('.draggable')
