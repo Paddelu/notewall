@@ -11,7 +11,8 @@ function note(name,content,color){
 function newNote(){
     var notename = prompt("Note name");
     names.push(notename);
-    while(hasDuplicates(names)){
+    while(hasDuplicates(names) || notename.length > 25){
+        console.log(notename.length);
         names.pop();
         notename = prompt("Note name");
         names.push(notename);
@@ -24,7 +25,8 @@ function newNote(){
     document.getElementById("parentdiv").appendChild(visualNote);
     document.getElementById(mynote.name).innerHTML = "";
     var h = document.createElement("H2") 
-    var t = document.createTextNode(mynote.name);    
+    h.setAttribute("class","text-center");
+    var t = document.createTextNode(mynote.name.toUpperCase());    
     h.appendChild(t);
     visualNote.appendChild(h);
     document.getElementById(mynote.name).innerHTML += mynote.content;
