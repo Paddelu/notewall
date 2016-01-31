@@ -15,11 +15,14 @@
           transform: translate(0px, 0px);
 }
 
-#parentdiv{
+body{
     height: 100%;
     background-color: burlywood;
     display:block;
-    overflow:auto;
+    overflow:hidden;
+}
+#parentdiv{
+    height: 100%;
 }
 
 .clearfix:after {

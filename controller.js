@@ -2,6 +2,8 @@ var notes = [];
 var notenumber = 0;
 var names = [];
 
+
+
 function note(name,content,color){
     this.name = name;
     this.content = content;
@@ -68,7 +70,7 @@ interact('.draggable')
          elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
     },
     // enable autoScroll
-    autoScroll: true,
+   // autoScroll: true,
 
     // call this function on every dragmove event
     onmove: dragMoveListener,
