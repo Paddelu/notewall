@@ -1,17 +1,17 @@
 .drag{
-  width: 20%;
-  min-height: 6.5em;
-  margin: 10%;
-  word-wrap: break-word;
-  white-space: pre;
-
-  background-color: lightyellow;
-  color: black;
-
-  border-radius: 0.75em;
-  padding: 2%;
-
-  -webkit-transform: translate(0px, 0px);
+    width: 20%;
+    min-height: 6.5em;
+    margin: 10%;
+    /* word-wrap: break-word; */
+    white-space: pre;
+    position:absolute;
+    top: 100px;
+    left 100px;
+    background-color: lightyellow;
+    color: black;
+    border-radius: 0.75em;
+    padding: 2%;
+    -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
 }
 
@@ -23,12 +23,7 @@
 }
 
 .clearfix:after {
-content: "";
-display: table;
-clear: both;
-}
-
-.rotate {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+    content: "";
+    display: table;
+    clear: both;
 }

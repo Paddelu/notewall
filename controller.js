@@ -23,6 +23,12 @@ function newNote(){
     visualNote.setAttribute("id",mynote.name);
     document.getElementById("parentdiv").appendChild(visualNote);
     document.getElementById(mynote.name).innerHTML = "";
+   /* var pic = document.createElement("img");
+    pic.src = "exit.png"
+    pic.setAttribute("height", "100");
+    pic.setAttribute("width", "100");
+    pic.setAttribute("alt", "close");
+    document.getElementById(mynote.name).appendChild(pic); */
     var h = document.createElement("H2") 
     h.setAttribute("class","text-center");
     var t = document.createTextNode(mynote.name.toUpperCase());    
@@ -34,21 +40,20 @@ function newNote(){
 }
 
 function hasDuplicates(array) {
-    console.log((new Set(array)).size !== array.length);
     return (new Set(array)).size !== array.length;
 }
 
 interact('.drag.draggable')
   .on('tap', function (event) {
-    console.log(event.currentTarget.id);
+    var id = event.currentTarget.id;
   });
 
 interact('.drag.draggable')
   .on('doubletap', function (event) {
-    console.log(event.currentTarget.id);
-    names.splice(names.indexOf(event.currentTarget.id), 1);
-    event.currentTarget.remove();
-    event.preventDefault
+    var index = names.indexOf(event.currentTarget.id);
+    document.getElementById(event.currentTarget.id).remove();
+    names.splice(index, 1);
+    
   });
 
 // target elements with the "draggable" class
