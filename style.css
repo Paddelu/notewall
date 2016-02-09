@@ -1,9 +1,65 @@
-.drag{
+/* make sidebar nav vertical */   
+
+  html,body{
+    background-color: #f8f8f8;
+    height: 100%;
+    overflow: hidden;
+  }
+    .affix-content .container .page-header{
+    margin-top: 0;
+  }
+  .sidebar-nav{
+        position:fixed; 
+        width:100%;
+  }
+  .affix-sidebar{
+    padding-right:0; 
+    font-size:small;
+    padding-left: 0;
+  }  
+  .affix-row, .affix-container, .affix-content{
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;    
+  } 
+  .affix-content{
+    background-color: burlywood;
+    height: 100%;
+    display:block;
+    overflow:hidden;
+  } 
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar{
+    border-radius:0; 
+    margin-bottom:0; 
+    border:0;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }  
+
+.sidebar-nav .navbar li a:hover {
+    background-color: #e7e7e7;
+}
+    
+    .drag{
+    display: table-cell;
     width: 20%;
     min-height: 6.5em;
     margin: 10%;
-    /* word-wrap: break-word; */
-    white-space: pre;
+    word-wrap:break-word;
     position:absolute;
     top: 100px;
     left 100px;
@@ -15,18 +71,3 @@
           transform: translate(0px, 0px);
 }
 
-body{
-    height: 100%;
-    background-color: burlywood;
-    display:block;
-    overflow:hidden;
-}
-#parentdiv{
-    height: 100%;
-}
-
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
