@@ -25,12 +25,6 @@ function newNote(){
     visualNote.setAttribute("id",mynote.name);
     document.getElementById("parentdiv").appendChild(visualNote);
     document.getElementById(mynote.name).innerHTML = "";
-   /* var pic = document.createElement("img");
-    pic.src = "exit.png"
-    pic.setAttribute("height", "100");
-    pic.setAttribute("width", "100");
-    pic.setAttribute("alt", "close");
-    document.getElementById(mynote.name).appendChild(pic); */
     var h = document.createElement("H2") 
     h.setAttribute("class","text-center");
     var t = document.createTextNode(mynote.name.toUpperCase());    
@@ -69,8 +63,6 @@ interact('.draggable')
          endOnly: true,
          elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
     },
-    // enable autoScroll
-   // autoScroll: true,
 
     // call this function on every dragmove event
     onmove: dragMoveListener,
